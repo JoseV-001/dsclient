@@ -1,7 +1,6 @@
 package com.josev001.dsclient.controller;
 
 import com.josev001.dsclient.dto.ClientDTO;
-import com.josev001.dsclient.entities.Client;
 import com.josev001.dsclient.services.ClientService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,17 +40,16 @@ public class ClientController {
     }
 
     @PutMapping(value = ("/{id}"))
-    public ResponseEntity<ClientDTO> update(@PathVariable Long id, @Valid @RequestBody ClientDTO dto){
-        dto = service.update(id,dto);
+    public ResponseEntity<ClientDTO> update(@PathVariable Long id, @Valid @RequestBody ClientDTO dto) {
+        dto = service.update(id, dto);
         return ResponseEntity.ok(dto);
     }
 
     @DeleteMapping(value = ("/{id}"))
-    public ResponseEntity<ClientDTO> delete(@PathVariable Long id){
+    public ResponseEntity<ClientDTO> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
-
 
 
 }

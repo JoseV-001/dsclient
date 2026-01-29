@@ -1,13 +1,14 @@
 package com.josev001.dsclient.dto;
 
 import com.josev001.dsclient.entities.Client;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
 public class ClientDTO {
 
     private Long id;
-
     private String name;
     private String cpf;
     private Double income;
@@ -15,6 +16,7 @@ public class ClientDTO {
     private int children;
 
     public ClientDTO() {
+
     }
 
     public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, int children) {
